@@ -9,7 +9,7 @@
   <body ng-controller="BeerController">
 
   <div class="row">
-  <div class="col-md-6">Hello World
+  <div class="col-md-6">
 
         <div class="add-beer">
         <h1>Add Beer</h1>
@@ -27,7 +27,9 @@
         </form><hr><br>
         </div> <!-- closes class add-beer  -->
 
-
+<div class="message-section" ng-show="success">
+    <p class="alert alert-info" role="alert" id="message">{{ message }}</p>
+  </div>
 
 
 
@@ -60,7 +62,7 @@
 
 
 
-  <div class="col-md-6">Hola Mundo
+  <div class="col-md-6">
     <form ng-show="edit">
       <h2>Edit Beer</h2>
       <div class="form-group">

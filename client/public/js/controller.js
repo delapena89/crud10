@@ -1,4 +1,6 @@
-app.controller('BeerController', function($scope, httpFactory, $http) {
+app.controller('BeerController', function($scope, httpFactory, $timeout, $http) {
+  $scope.success = false;
+  $scope.message = '';
   $scope.beer = {};
   $scope.edit = false;
   getBeers = function(url) {
@@ -9,6 +11,10 @@ app.controller('BeerController', function($scope, httpFactory, $http) {
 };
 getBeers('api/v1/beers');
 
+function messageTimeout() {
+  $scope.success = false;
+}
+
 
 $scope.postBeer = function() {
   var payload = $scope.beer;
@@ -16,6 +22,9 @@ $scope.postBeer = function() {
   .then(function(response) {
     $scope.beers.push(response.data);
     $scope.beer = {};
+    $scope.success = true;
+    $scope.message = "Added a new beer! Woohoo!";
+    $timeout(messageTimeout, 5000);
     getBeers('api/v1/beers');
   });
 };
@@ -23,6 +32,9 @@ $scope.postBeer = function() {
 $scope.deleteBeer = function(id) {
   httpFactory.delete('api/v1/beer/' + id)
   .then(function(response) {
+    $scope.success = true;
+    $scope.message = "Deleted beer! Woohoo!";
+    $timeout(messageTimeout, 5000);
     getBeers('api/v1/beers');
   });
 };
@@ -49,8 +61,8 @@ $scope.getBeer = function(id) {
         $scope.success = true;
         $scope.message = "Edited beer! Woohoo!";
         $timeout(messageTimeout, 5000);
-        getBeers('api/v1/beers');
     });
+    getBeers('api/v1/beers');
   };
 
 
