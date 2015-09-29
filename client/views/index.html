@@ -2,37 +2,41 @@
 <html ng-app="myApp" >
   <head>
     <meta charset="utf-8">
-    <title>Crud 4 - Beer</title>
+    <title>Crud 10 - Beer</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
-  <div ng-controller="BeerController">
-    <div class="container">
-
-    <div class="add-beer">
-
-    <h1>Add a Beer</h1>
 
     <div class="row">
-      <div class="col-md-6">
-        <form>
-        <div class="form-group">
-          <input type="text" ng-model="beer.name" class="form-control" id="name" placeholder="Enter the beer name" required>
-        </div>
-        <div class="form-group">
-          <input type="text" ng-model="beer.type" class="form-control" id="type" placeholder="Enter the beer type" required>
-        </div>
-        <div class="form-group">
-          <input type="number" ng-model="beer.abv" class="form-control" id="abv" placeholder="Enter the beer abv" required>
-        </div>
-        <button type="submit" ng-click="postBeer()" class="btn btn-primary">Submit</button>
-        </form><hr>
+      <div ng-controller="BeerController">
+        <div class="container">
+        <div class="add-beer">
+        <h1>Add Beer</h1>
+          <div class="col-md-6">
+            <form>
+              <div class="form-group">
+                <input type="text" ng-model="beer.name" class="form-control" id="name" placeholder="Enter the beer name" required>
+              </div>
+              <div class="form-group">
+                <input type="text" ng-model="beer.type" class="form-control" id="type" placeholder="Enter the beer type" required>
+              </div>
+              <div class="form-group">
+                <input type="number" ng-model="beer.abv" step="0.1" class="form-control" id="abv" placeholder="Enter the beer abv" required>
+              </div>
+              <button type="submit" ng-click="postBeer()" class="btn btn-primary">Submit</button>
+        </form><hr><br>
+        </div> <!-- closes class col-md-6  -->
+        </div> <!-- closes class add-beer  -->
+        </div> <!-- closes class container  -->
+      </div> <!-- closes ng-controller  -->
+    </div> <!-- closes class row  -->
 
-    <br>
 
-  <div class="beer-section">
-    <table class="table">
+<div ng-controller="BeerController">
+<div class="beer-section">
+  <div class="col-md-6">
+    <table class="table table-condensed table-striped">
       <thead>
         <tr>
           <th><h2>Name</h2></th>
@@ -46,19 +50,27 @@
           <td>{{beer.name}}</td>
           <td>{{beer.type}}</td>
           <td>{{beer.abv}}</td>
+          <td>
+            <button ng-click="getBeer(beer._id)" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+            <button ng-click="deleteBeer(beer._id)" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+          </td>
         </tr>
       </tbody>
     </table>
-  </div>
-
-      </div>
-    </div>
-
-    </div> <!--close div class add-beer -->
+  </div> <!--closes out col-md-6 -->
+</div> <!--closes out beer section -->
+</div> <!--closes out ng controller -->
 
 
-  </div> <!--closes div class container -->
-</div>
+
+
+
+
+
+
+
+
+
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
