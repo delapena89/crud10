@@ -8,12 +8,12 @@
   </head>
   <body>
 
-    <div class="row">
-      <div ng-controller="BeerController">
-        <div class="container">
+
+  <div class="row">
+  <div class="col-md-6">Hello World
+          <div ng-controller="BeerController">
         <div class="add-beer">
         <h1>Add Beer</h1>
-          <div class="col-md-6">
             <form>
               <div class="form-group">
                 <input type="text" ng-model="beer.name" class="form-control" id="name" placeholder="Enter the beer name" required>
@@ -26,16 +26,11 @@
               </div>
               <button type="submit" ng-click="postBeer()" class="btn btn-primary">Submit</button>
         </form><hr><br>
-        </div> <!-- closes class col-md-6  -->
         </div> <!-- closes class add-beer  -->
-        </div> <!-- closes class container  -->
       </div> <!-- closes ng-controller  -->
-    </div> <!-- closes class row  -->
-
 
 <div ng-controller="BeerController">
-<div class="beer-section">
-  <div class="col-md-6">
+  <div class="beer-section">
     <table class="table table-condensed table-striped">
       <thead>
         <tr>
@@ -57,9 +52,22 @@
         </tr>
       </tbody>
     </table>
-  </div> <!--closes out col-md-6 -->
 </div> <!--closes out beer section -->
 </div> <!--closes out ng controller -->
+
+
+  </div>
+  <div class="col-md-6">Hola Mundo</div>
+</div>
+
+
+
+
+
+
+
+
+
 
 
 
