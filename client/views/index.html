@@ -9,7 +9,9 @@
   </head>
   <body ng-controller="BeerController">
 
-    <div class="row">
+
+
+    <div class="row static">
       <div class="col-md-6">
         <div class="add-beer">
           <h1>Add Beer</h1>
@@ -28,7 +30,7 @@
         </div> <!-- closes class add-beer  -->
       </div>
       <div class="col-md-6">
-        <form ng-show="edit">
+        <form class="move-right" ng-show="edit">
           <h2>Edit Beer</h2>
           <div class="form-group">
             <input type="text" ng-model="beerEdit.name" class="form-control" id="name" placeholder="Enter the beer name" required>
@@ -40,16 +42,19 @@
             <input type="number" ng-model='beerEdit.abv' step="0.1" class="form-control" id="abv" placeholder="Enter the beer abv" required>
           </div>
           <button type="submit" ng-click="editBeer(beerEdit._id)" class="btn btn-primary btn-block">Submit</button>
-        </form>
+        </form><hr>
       </div>
     </div>
 
-    <div class="row col-md-6">
+    <div class="row col-md-6 margin">
       <div class="message-section" ng-show="success">
         <p class="alert alert-info" role="alert" id="message">{{ message }}</p>
       </div>
     </div>
 
+
+
+  <div class='beer-section'>
     <div class="row col-md-10 col-md-offset-1">
       <table class="table table-condensed table-striped">
         <thead>
@@ -72,7 +77,10 @@
           </tr>
         </tbody>
       </table>
-    </div> <!--closes out beer section -->
+    </div>
+  </div> <!--closes out beer section -->
+
+
 
     <!-- scripts -->
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>

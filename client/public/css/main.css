@@ -1,10 +1,33 @@
+
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
+  max-height: 100%;
 }
 
 a {
   color: #00B7FF;
+}
+
+.static {
+  position: fixed;
+}
+
+.add-beer {
+  width: 655px;
+  height: 288px;
+}
+
+.move-right {
+  float: right;
+  width: 655px;
+  height: 224px;
+}
+
+.beer-section {
+  margin-top: 300px;
 }
 
 
