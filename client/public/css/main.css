@@ -51,7 +51,11 @@ a {
 
 .shadow {
    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
 
+.input-width {
+  width: 525px;
+  height: 34px
 }
 
 

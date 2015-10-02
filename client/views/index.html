@@ -54,6 +54,8 @@
 
   <div class='beer-section bottom'>
     <div class="row col-md-10 col-md-offset-1">
+    <h2 class="whitetext shadow">Search by Beer name</h2>
+    <input type="text" class="form-control input-width" ng-model="search.name">
       <table class="table table-condensed whitetext">
         <thead>
           <tr class="shadow">
@@ -64,7 +66,7 @@
           </tr>
         </thead>
         <tbody class='shadow'>
-          <tr ng-repeat="beer in beers">
+          <tr ng-repeat="beer in beers | filter:search">
             <td><h3>{{beer.name}}</h3></td>
             <td><h3>{{beer.type}}</h3></td>
             <td><h3>{{beer.abv}}</h3></td>
