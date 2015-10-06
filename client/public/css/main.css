@@ -6,7 +6,6 @@ body {
   margin: 0px;
   background-image: url(https://adrian1974fulga.files.wordpress.com/2014/09/second-pictrure-beer-all-around-the-world.jpg);
   background-size: 100% 100%;
-
 }
 
 a {
@@ -56,6 +55,11 @@ a {
 .input-width {
   width: 525px;
   height: 34px
+}
+
+.background {
+  background-color: darkgoldenrod;
+  opacity: 0.7;
 }
 
 
