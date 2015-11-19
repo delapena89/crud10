@@ -7,6 +7,6 @@ var Beer = new Schema ({
   abv: Number
 });
 
-mongoose.connect(process.envMONGO_URI || "mongodb://localhost/beers");
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/beers");
 
 module.exports = mongoose.model('beers', Beer);
